@@ -1,0 +1,10 @@
+Document: python3-aiosmtpd
+Title: Python3 aiosmtpd Manual
+Author: AIO Libs developers
+Abstract: This manual describes how to use Python3 AIOSMTPD library and
+ binaries
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python3-aiosmtpd/html/intro.html
+Files: /usr/share/doc/python3-aiosmtpd/html/*.html

@@ -1,0 +1,24 @@
+Source: python-aiosmtpd
+Section: python
+Priority: optional
+Maintainer: Pierre-Elliott Bécue <becue@crans.org>
+Build-Depends: debhelper (>= 9),
+               dh-python,
+               python3-all (>= 3.5),
+               python3-public,
+               python3-setuptools,
+               python3-sphinx
+Standards-Version: 4.0.0
+Homepage: https://github.com/aio-libs/aiosmtpd
+Vcs-Browser: https://github.com/P-EB/python-aiosmtpd
+Vcs-Git: https://github.com/P-EB/python-aiosmtpd.git -b master
+X-Python3-Version: >= 3.5
+
+Package: python3-aiosmtpd
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends}
+Description: Python3 asyncio based SMTP server
+ This is a server for SMTP and related protocols, similar in utility to the
+ standard library’s smtpd.py module, but rewritten to be based on asyncio for
+ Python 3.

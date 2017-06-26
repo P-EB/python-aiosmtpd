@@ -1,0 +1,13 @@
+Index: python-aiosmtpd-1.0/conf.py
+===================================================================
+--- python-aiosmtpd-1.0.orig/conf.py
++++ python-aiosmtpd-1.0/conf.py
+@@ -68,7 +68,7 @@ release = get_version('aiosmtpd/smtp.py'
+ 
+ # List of patterns, relative to source directory, that match files and
+ # directories to ignore when looking for source files.
+-exclude_patterns = ['_build', '.tox/*', '.git*']
++exclude_patterns = ['_build', '.tox/*', '.git*', 'debian', '_sources', '_static']
+ 
+ # The reST default role (used for this markup: `text`) to use for all
+ # documents.
