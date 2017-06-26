@@ -1,0 +1,5 @@
+python-aiosmtpd (1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #866009)
+
+ -- Pierre-Elliott Bécue <becue@crans.org>  Mon, 26 Jun 2017 14:35:00 +0200
