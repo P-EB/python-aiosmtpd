@@ -9,8 +9,14 @@ export PYBUILD_NAME=aiosmtpd
 %:
 	dh $@ --with python3,sphinxdoc --buildsystem=pybuild
 
-override_dh_auto_install:
-	dh_auto_install
+override_dh_installdocs:
 	PYTHONPATH=. sphinx-build -N -q -E -c ./ -b html . debian/compiled_doc/temp
 	mv debian/compiled_doc/temp/aiosmtpd/docs debian/compiled_doc/html
 	rm -rf debian/compiled_doc/temp
+	dh_installdocs
+
+override_dh_installman:
+	mkdir -p debian/compiled_doc/manpage
+	rst2man aiosmtpd/docs/manpage.rst > debian/compiled_doc/manpage/aiosmtpd.man
+	dh_installman
+	rm -rf debian/compiled_doc/manpage
