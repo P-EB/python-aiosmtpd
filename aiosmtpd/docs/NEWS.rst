@@ -2,6 +2,33 @@
  NEWS for aiosmtpd
 ===================
 
+1.1 (2017-07-06)
+================
+* Drop support for Python 3.4.
+* As per RFC 5321, §4.1.4, multiple ``HELO`` / ``EHLO`` commands in the same
+  session are semantically equivalent to ``RSET``.  (Closes #78)
+* As per RFC 5321, $4.1.1.9, ``NOOP`` takes an optional argument, which is
+  ignored.  **API BREAK** If you have a handler that implements
+  ``handle_NOOP()``, it previously took zero arguments but now requires a
+  single argument.  (Closes #107)
+* The command line options ``--version`` / ``-v`` has been added to print the
+  package's current version number.  (Closes #111)
+* General improvements in the ``Controller`` class.  (Closes #104)
+* When aiosmtpd handles a ``STARTTLS`` it must arrange for the original
+  transport to be closed when the wrapped transport is closed.  This fixes a
+  hidden exception which occurs when an EOF is received on the original
+  tranport after the connection is lost.  (Closes #83)
+* Widen the catch of ``ConnectionResetError`` and ``CancelledError`` to also
+  catch such errors from handler methods.  (Closes #110)
+* Added a manpage for the ``aiosmtpd`` command line script.  (Closes #116)
+* Added much better support for the ``HELP``.  There's a new decorator called
+  ``@syntax()`` which you can use in derived classes to decorate ``smtp_*()``
+  methods.  These then show up in ``HELP`` responses.  This also fixes
+  ``HELP`` responses for the ``LMTP`` subclass.  (Closes #113)
+* The ``Controller`` class now takes an optional keyword argument
+  ``ssl_context`` which is passed directly to the asyncio ``create_server()``
+  call.
+
 1.0 (2017-05-15)
 ================
 * Release.
