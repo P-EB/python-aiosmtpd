@@ -1,1 +1,3 @@
 debian/compiled_doc/html
+debian/compiled_doc/changelog.gz
+debian/compiled_doc/changelog.html.gz
