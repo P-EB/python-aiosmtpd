@@ -15,8 +15,8 @@ override_dh_installdocs:
 	rm -rf debian/compiled_doc/temp
 	cp -a debian/compiled_doc/html/NEWS.html debian/compiled_doc/changelog.html
 	lynx -dump -nolist debian/compiled_doc/changelog.html > debian/compiled_doc/changelog
-	gzip debian/compiled_doc/changelog.html
-	gzip debian/compiled_doc/changelog
+	gzip -9 debian/compiled_doc/changelog.html
+	gzip -9 debian/compiled_doc/changelog
 	dh_installdocs
 
 override_dh_installman:
