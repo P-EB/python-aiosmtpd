@@ -1,0 +1,5 @@
+# This package provides a library AND a binary. As the binary is less
+# essential than the library, and the binary is not worth a second
+# package, the naming convention will be a library's one
+python3-aiosmtpd: application-in-library-section
+python3-aiosmtpd: library-package-name-for-application
